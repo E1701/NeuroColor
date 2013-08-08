@@ -6,9 +6,6 @@ import socket
  
 import threading, signal
 
-
-
-
 def timed_out(signum, frame):
 	print("Times up!\n")
 	sys.exit()
