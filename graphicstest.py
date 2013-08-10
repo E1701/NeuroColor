@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/AnirudhVasudevan/Desktop/graphics3.py')
+
 from graphics3 import *
 
 import socket
@@ -15,7 +15,7 @@ def main():
 	g = GraphWin("Window", 200, 200)
 	g.setBackground("red")
 	name = Entry(Point(100,50), 10).draw(g)
-	filename = stringname.getText	
+	filename = eval(name.getText())	
 	f = open(filename, "w")
 	print f
 
