@@ -3,7 +3,7 @@ import sys
 from graphics3 import *
 
 import socket
- 
+import time
 import threading, signal
 
 def timed_out(signum, frame):
@@ -12,16 +12,15 @@ def timed_out(signum, frame):
 	
 def main():
 	print("Opening window\n")
-	g = GraphWin("Window", 200, 200)
+	g = GraphWin("Window", 2000, 2000)
 	g.setBackground("red")
 	name = Entry(Point(100,50), 10).draw(g)
-	filename = eval(name.getText())	
-	f = open(filename, "w")
-	print f
+	#filename = eval(name.getText())	
+	f = open(time.asctime() , "w")
 
-	(Text(Point(100, 25), "Please enter your name:").draw(g))
+	#(Text(Point(100, 25), "Please enter your name:").draw(g))
 		
-	Text(Point(100, 125), "Click anywhere to begin").draw(g)
+	#Text(Point(100, 125), "Click anywhere to begin").draw(g)
 	print("Waiting for Mouse\n")
 	if g.getMouse():
 		
@@ -53,20 +52,6 @@ def main():
 			value = str(buf)	
 			
 			f.write(value)
-
-	
-
-
-	
-
-
-
-
-
-
-
-
-
 
 
 main()
