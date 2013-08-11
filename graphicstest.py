@@ -14,9 +14,9 @@ def main():
 	print("Opening window\n")
 	g = GraphWin("Window", 2000, 2000)
 	g.setBackground("red")
-	name = Entry(Point(100,50), 10).draw(g)
+	#name = Entry(Point(100,50), 10).draw(g)
 	#filename = eval(name.getText())	
-	f = open(time.asctime() , "w")
+	f = open("AnirudhV"+ " " +time.asctime()+".txt" , "w")
 
 	#(Text(Point(100, 25), "Please enter your name:").draw(g))
 		
@@ -24,11 +24,11 @@ def main():
 	print("Waiting for Mouse\n")
 	if g.getMouse():
 		
-		print("Got Mouse!.. setting timer for 10 seconds\n")
-		#t = threading.Timer(10.0, timed_out)
+		print("Got Mouse!.. setting timer for 30 seconds\n")
+		#t = threading.Timer(30.0, timed_out)
 		#t.start()
 		signal.signal(signal.SIGALRM, timed_out)
-		signal.alarm(10)
+		signal.alarm(30)
 		print("timer started.\n")
 	
 		print("opening socket.\n")
