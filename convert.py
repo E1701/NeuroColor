@@ -1,6 +1,6 @@
 import json,sys
 
-debug = 0
+debug = True
 
 sample = {u'eegPower': {u'lowGamma': 2977, u'highGamma': 970, u'highAlpha': 11293, u'delta': 295753, u'highBeta': 5279, u'lowAlpha': 2267, u'lowBeta': 5814, u'theta': 13820}, u'poorSignalLevel': 0, u'eSense': {u'meditation': 84, u'attention': 74}}
 
@@ -46,7 +46,7 @@ def convertEsenseToCsv(filename,merge=False):
             continue
 
         result = {}
-        if debug: print line
+        if debug: print filename,line
         lineDict = json.loads(line)
         if debug: print lineDict
                    
