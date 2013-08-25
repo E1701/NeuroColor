@@ -1,3 +1,4 @@
 *.pyc
 *.out
 *.csv
+.DS_Store
