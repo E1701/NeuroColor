@@ -5,6 +5,7 @@ from graphics3 import *
 import socket
 import time
 import threading, signal
+import thread
 
 def timed_out(signum, frame):
 	print("Times up!\n")
@@ -16,7 +17,7 @@ def main():
 	g.setBackground("red")
 	#name = Entry(Point(100,50), 10).draw(g)
 	#filename = eval(name.getText())	
-	f = open("AnirudhV"+ " " +time.asctime()+".txt" , "w")
+	f = open("SuchiVRed "+ " " +time.asctime()+".txt" , "w")
 
 	#(Text(Point(100, 25), "Please enter your name:").draw(g))
 		
@@ -28,8 +29,16 @@ def main():
 		#t = threading.Timer(30.0, timed_out)
 		#t.start()
 		signal.signal(signal.SIGALRM, timed_out)
-		signal.alarm(30)
+		a = signal.alarm(30)
 		print("timer started.\n")
+		#t = Timer(15.0, g.setBackground("red"))
+		#t.start()
+		
+	#signal.signal(signal.SIGALRM, timed_out)
+	#if signal.alarm(15):
+		#g.setBackground("red")
+			
+			
 	
 		print("opening socket.\n")
 		s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
