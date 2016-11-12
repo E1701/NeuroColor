@@ -1,6 +1,7 @@
 import json,sys
 
 debug = True
+titlePrinted = False
 
 sample = {u'eegPower': {u'lowGamma': 2977, u'highGamma': 970, u'highAlpha': 11293, u'delta': 295753, u'highBeta': 5279, u'lowAlpha': 2267, u'lowBeta': 5814, u'theta': 13820}, u'poorSignalLevel': 0, u'eSense': {u'meditation': 84, u'attention': 74}}
 
@@ -36,8 +37,13 @@ def convertEsenseToCsv(filename,merge=False):
     user = filenameTokens[0]
     startTime = " ".join(filenameTokens[2:])
 
+    global titlePrinted
 
     if not merge: fout.write(printCSVLine({},True,merge))
+    if merge and not titlePrinted: 
+        fout.write(printCSVLine({},True,merge))
+        titlePrinted = True
+
     sampleNum = 0
 
     for line in fin:
